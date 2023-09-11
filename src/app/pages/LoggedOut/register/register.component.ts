@@ -34,7 +34,6 @@ export class RegisterComponent implements OnInit{
 
   async register(){
     const user = await this.authService.register(this.credentials.value.email, this.credentials.value.password);
-    console.log("I am mann")
     console.log(user);
     
   }

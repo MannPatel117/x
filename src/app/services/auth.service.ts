@@ -1,7 +1,6 @@
 import { Injectable, NgZone, inject } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +15,7 @@ export class AuthService {
     .then((result) => {
       window.alert('success');
       console.log(result.user)
-
+      return result.user
     })
     .catch((error) => {
       window.alert(error.message);
