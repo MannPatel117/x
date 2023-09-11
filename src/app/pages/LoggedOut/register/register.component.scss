@@ -1,0 +1,94 @@
+.bg-img{
+    background-image: url(https://images.unsplash.com/photo-1642850356603-ca6295576249?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1854&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.one{
+    padding-block: 10vh;
+    padding-left: 5vw;
+    color: white;
+    justify-content: space-evenly;
+}
+
+.heading{
+    font-size: 32px;
+    margin-top: 50px;
+}
+
+.form{
+    gap: 10px;
+}
+
+.label{
+    font-size: 12px;
+}
+
+.input-wrap{
+    position: relative;
+}
+
+.form-input{
+    margin-top: 5px;
+    width: 300px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    padding-left: 40px;
+}
+
+.form-input:focus{
+    outline: none;
+    border: 2px solid #8996FF;
+}
+
+.icon{
+  position: absolute;
+  top: 60%;
+  left: 15px; /* Adjust the distance between the icon and input */
+  transform: translateY(-50%);
+}
+
+.align-fix{
+    top: 55%;
+}
+
+.error{
+    opacity:0;
+}
+
+.showError{
+    opacity: 1;
+}
+
+.showErrorInput{
+    border: 2px solid rgb(255, 114, 114);
+}
+
+.errorMsg{
+    color: rgb(255, 42, 42);
+    font-size: 10px;
+}
+
+.mt-fix{
+    margin-top: 10px;
+}
+
+.link-tag{
+    font-size: 12px;
+    font-weight: 300;  
+}
+
+.link-tag:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media (max-width:300px){
+    .form-input{
+        width: 200px;
+    }
+}

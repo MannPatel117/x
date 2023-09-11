@@ -1,0 +1,65 @@
+<div class="nav flex flex-center flex-space">
+    <img src="../../../../assets/logo-white.png" (click)="routeToMain()" class="logo" alt="">
+    <button class="btn btn-secondary resp-hide" (click)="routeToLogin()">Login</button>
+</div>
+<div class="main flex flex-center resp-col">
+   
+    <div class="full flex flex-center flex-align-start flex-col one">
+        <h2 class="fw-500 heading">Sign Up</h2>
+
+        <form [formGroup]="credentials" class="form flex flex-col" (ngSubmit)="register()">
+            <div>
+                <label for="name" class="label fw-500">User Name
+                </label>
+                <div class="input-wrap">
+                    <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 17 19" fill="none">
+                            <path d="M8.7 18.26C7.00667 18.26 5.52 17.9 4.24 17.18C2.97333 16.4733 1.98667 15.4667 1.28 14.16C0.573333 12.8533 0.22 11.3133 0.22 9.54C0.22 8.23333 0.426667 7.04 0.84 5.96C1.26667 4.88 1.86667 3.95333 2.64 3.18C3.42667 2.39333 4.35333 1.78667 5.42 1.36C6.48667 0.933332 7.66667 0.719999 8.96 0.719999C10.5067 0.719999 11.86 1.03333 13.02 1.66C14.18 2.27333 15.08 3.13333 15.72 4.24C16.3733 5.34667 16.7 6.64 16.7 8.12C16.7 9.28 16.54 10.2867 16.22 11.14C15.9133 11.9933 15.4733 12.6533 14.9 13.12C14.3267 13.5867 13.66 13.82 12.9 13.82C12.2467 13.82 11.72 13.6667 11.32 13.36C10.92 13.04 10.68 12.6 10.6 12.04C10.2267 12.6267 9.77333 13.0733 9.24 13.38C8.72 13.6733 8.16667 13.82 7.58 13.82C6.55333 13.82 5.75333 13.5 5.18 12.86C4.62 12.2067 4.34 11.3133 4.34 10.18C4.34 9.20667 4.52667 8.34 4.9 7.58C5.27333 6.80667 5.78667 6.2 6.44 5.76C7.09333 5.32 7.83333 5.1 8.66 5.1C9.94 5.1 10.7867 5.62 11.2 6.66L11.44 5.28H12.76L11.86 10.46C11.8067 10.8067 11.78 11.12 11.78 11.4C11.78 12.2933 12.18 12.74 12.98 12.74C13.74 12.74 14.36 12.32 14.84 11.48C15.32 10.6267 15.56 9.50667 15.56 8.12C15.56 6.85333 15.28 5.75333 14.72 4.82C14.1733 3.88667 13.4067 3.16 12.42 2.64C11.4333 2.12 10.2733 1.86 8.94 1.86C7.46 1.86 6.16 2.18 5.04 2.82C3.92 3.46 3.04667 4.36 2.42 5.52C1.79333 6.66667 1.48 8.00667 1.48 9.54C1.48 11.1267 1.77333 12.4867 2.36 13.62C2.94667 14.7533 3.78 15.62 4.86 16.22C5.94 16.8333 7.22 17.14 8.7 17.14C9.78 17.14 10.7533 16.9667 11.62 16.62C12.5 16.2867 13.2267 15.8133 13.8 15.2L14.46 16.16C13.8067 16.84 12.98 17.36 11.98 17.72C10.9933 18.08 9.9 18.26 8.7 18.26ZM7.76 12.66C8.36 12.66 8.88667 12.4867 9.34 12.14C9.80667 11.78 10.1733 11.2867 10.44 10.66C10.7067 10.0333 10.84 9.31333 10.84 8.5C10.84 7.00667 10.16 6.26 8.8 6.26C8.21333 6.26 7.68667 6.43333 7.22 6.78C6.75333 7.11333 6.38 7.57333 6.1 8.16C5.83333 8.74667 5.7 9.42 5.7 10.18C5.7 10.98 5.88 11.5933 6.24 12.02C6.6 12.4467 7.10667 12.66 7.76 12.66Z" fill="#8996FF"/>
+                        </svg>
+                    </i>
+                    <input id="name" autocomplete="username" formControlName="name" required="true" type="text" placeholder="User ID" class="form-input" [class.showErrorInput]="credentials.controls['name'].errors && (credentials.controls['name'].dirty || credentials.controls['name'].touched)">
+                </div>
+                <div class="error" [class.showError]="credentials.controls['name'].errors && (credentials.controls['name'].dirty || credentials.controls['name'].touched)" >
+                    <small class="errorMsg">Enter User ID</small>
+                </div>
+            </div>
+            <div>
+                <label for="email" class="label fw-500"> Email Address
+                </label>
+                <div class="input-wrap">
+                    <i class="icon align-fix">
+                        <svg width="14" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="15" height="11" rx="2" fill="#8996FF"/>
+                            <path d="M3 2.5L7.5 5.92303L12 2.5" stroke="black"/>
+                            </svg>          
+                    </i>
+                    <input id="email" formControlName="email" type="email" autocomplete="email" required placeholder="Your Email" class="form-input" [class.showErrorInput]="credentials.controls['email'].errors && (credentials.controls['email'].dirty || credentials.controls['email'].touched)">
+                </div>
+                <div class="error" [class.showError]="credentials.controls['email'].errors && (credentials.controls['email'].dirty || credentials.controls['email'].touched)">
+                    <small class="errorMsg">Invalid Email</small>
+                </div>
+            </div>
+            <div class="space-y-1">
+                <label for="password" class="label fw-500"> Password</label>
+                <div class="input-wrap">
+                    <i class="icon">
+                        <svg width="11" height="15" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.98715 4.65555C7.99566 4.53365 8 4.4103 8 4.28571C8 1.91878 6.433 0 4.5 0C2.567 0 1 1.91878 1 4.28571C1 4.4103 1.00434 4.53365 1.01285 4.65555C0.379735 5.43078 0 6.42105 0 7.5C0 9.98523 2.01472 12 4.5 12C6.98528 12 9 9.98523 9 7.5C9 6.42105 8.62027 5.43078 7.98715 4.65555ZM4.5 1.42853C5.57014 1.42853 6.47203 2.34742 6.74712 3.60037C6.08588 3.21851 5.31846 3 4.5 3C3.68154 3 2.91412 3.21851 2.25288 3.60037C2.52798 2.34742 3.42986 1.42853 4.5 1.42853ZM6 7.5C6 8.32837 5.32843 9 4.5 9C3.67157 9 3 8.32837 3 7.5C3 6.67163 3.67157 6 4.5 6C5.32843 6 6 6.67163 6 7.5Z" fill="#8996FF"/>
+                        </svg>
+                    </i>
+                    <input id="password" formControlName="password" type="password" autocomplete="current-password" required placeholder="Your Password" class="form-input" [class.showErrorInput]="credentials.controls['password'].errors && (credentials.controls['password'].dirty || credentials.controls['password'].touched)">
+                </div>
+                <div class="error" [class.showError]="credentials.controls['password'].errors && (credentials.controls['password'].dirty || credentials.controls['password'].touched)">
+                    <small class="errorMsg">Invalid Password</small>
+                </div>
+            </div>
+            <button class="btn btn-primary mt-fix" (click)="register()">
+                Sign Up
+            </button>
+        </form>
+        <a (click)="routeToLogin()" class="link-tag">Already have an account? Login here.</a>
+    </div>
+    <div class="full flex flex-img bg-img">
+        
+    </div>
+</div>

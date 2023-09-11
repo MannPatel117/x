@@ -1,1 +1,153 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.fw-100{
+    font-weight: 100;
+}
+
+.fw-200{
+    font-weight: 200;
+}
+
+.fw-400{
+    font-weight: 400;
+}
+
+.fw-500{
+    font-weight: 500;
+}
+
+.fw-600{
+    font-weight: 600;
+}
+
+.fw-700{
+    font-weight: 700;
+}
+
+.fw-800{
+    font-weight: 800;
+}
+
+.fw-1000{
+    font-weight: 1000;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #121212;
+    user-select: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.flex-space{
+    justify-content: space-between;
+}
+
+.flex-align-start{
+    align-items: flex-start;
+}
+
+.nav{
+    width: 94vw;
+    position: absolute;
+    left: 3vw;
+    top: 2vw;
+}
+
+.full{
+    width: 100%;
+    height: 100%;
+}
+.flex-img{
+    flex-basis: 130%;
+}
+
+.logo{
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    border-radius: 100%;
+    border: 1px white solid;
+}
+
+.logo:hover{
+    border: 2px white solid;
+    cursor: pointer;
+}
+
+.btn{
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    border: 1px white solid;
+}
+
+.btn-secondary{
+    color: white;
+    background-color: transparent;
+}
+
+.btn-secondary:hover{
+    border: 2px white solid;
+    cursor: pointer;
+}
+
+.btn-primary{
+    color: #121212;
+    background-color: white;
+    font-weight: 600;
+}
+
+.btn-primary:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+@media (orientation: portrait){
+    
+    .resp-col{
+        flex-direction: column;
+    }
+
+    .flex-img{
+        display: none;
+    }
+
+    .one{
+        align-items: center;
+        padding-left: 0px !important;
+    }
+
+    .nav{
+        width: 86vw;
+        top: 5vw;
+        left: 7vw;
+    }
+
+    .resp-hide{
+        display: none;
+    }
+}
