@@ -1,5 +1,4 @@
 import { Injectable, NgZone, inject } from '@angular/core';
-import { Auth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -8,24 +7,21 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 })
 export class AuthService {
   
-  constructor(public afAuth: Auth, private router : Router, public ngZone: NgZone){
+  constructor(public afAuth: AngularFireAuth, private router : Router, public ngZone: NgZone){
     
    }
 
    async register(email : string, password : string) {
-      try{
-        console.log("I am tried")
-        const user= await createUserWithEmailAndPassword(this.afAuth, email, password);
-        console.log("I am not tried")
-        this.router.navigate(['/home']);
-        return user;
-      }
-      
-      catch(e){
-        console.log(e);
-        return null;
-      }
-    }
+    return this.afAuth.createUserWithEmailAndPassword(email, password)
+    .then((result) => {
+      window.alert('success');
+      console.log(result.user)
+
+    })
+    .catch((error) => {
+      window.alert(error.message);
+    });
+  }
 
     logout() {
       console.log(this.afAuth.currentUser);
